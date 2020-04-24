@@ -31,6 +31,10 @@ function enqueue_parent_styles() {
     wp_enqueue_style( 'responsive-child', get_stylesheet_directory_uri() . '/assets/css/responsive.css');
     $depedencies[] = 'responsive-child';
 
+    wp_register_style('responsive-child2', get_stylesheet_directory_uri() . '/assets/css/responsive2.css', $depedencies, wp_get_theme()->get('Version'));
+    wp_enqueue_style( 'responsive-child', get_stylesheet_directory_uri() . '/assets/css/responsive2.css');
+    $depedencies[] = 'responsive-child2';
+
    
       wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css',
         array( $depedencies ),
